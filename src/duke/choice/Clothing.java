@@ -2,8 +2,8 @@ package duke.choice;
 
 public class Clothing {
 
-    public static double MINIMUM_PRICE = 10;
-    public static double TAX_RATE = 0.2;
+    public static final double MINIMUM_PRICE = 10;
+    public static final double TAX_RATE = 0.2;
 
     private String description;
     private double price;
@@ -40,5 +40,14 @@ public class Clothing {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    @Override
+    public String toString() {
+        return "Clothing{" +
+                "description='" + description + '\'' +
+                ", price=" + price +
+                ", size='" + size + '\'' +
+                '}';
     }
 }
