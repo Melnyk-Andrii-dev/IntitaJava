@@ -20,20 +20,6 @@ public class Product {
         this.amount = amount;
     }
 
-    public Product(Product product) {
-        this.id = product.id;
-        this.title = product.title;
-        this.upc = product.upc;
-        this.manufacturer = product.manufacturer;
-        this.price = product.price;
-        this.shelfLifeMonth = product.getShelfLifeMonth();
-        this.amount = product.amount;
-    }
-
-    public Product() {
-    }
-
-
     public int getId() {
         return id;
     }
