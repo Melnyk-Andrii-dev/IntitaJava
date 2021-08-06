@@ -9,9 +9,11 @@ public class Main {
         productMas[3] = new Product(4, "pasta", 44444, "Pasta2 LTD", 10.50, 2, 300);
         productMas[4] = new Product(5, "iCheese", 55, "Apple", 150.50, 12, 20);
 
-        Shop.printByTitle(productMas);
-        Shop.printByTitleAndPrice(productMas);
-        Shop.printByShelfLife(productMas);
+        Shop shop = new Shop(productMas);
+
+        shop.printByTitle();
+        shop.printByTitleAndPrice();
+        shop.printByShelfLife();
     }
 
 

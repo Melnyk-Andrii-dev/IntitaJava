@@ -4,12 +4,23 @@ import java.util.Scanner;
 
 public class Shop {
 
+    private Product[] products;
+
     static Scanner scanner = new Scanner(System.in);
 
-    public static void printByTitle(Product[] productMas){
+    public Shop(Product...products) {
+        this.products = new Product[products.length];
+        int i = 0;
+        for (Product product:products) {
+            this.products[i] = new Product(product);
+            i++;
+        };
+    }
+
+    public void printByTitle(){
         System.out.println("Enter product title to find: ");
         String title = scanner.nextLine();
-        for (Product product:productMas) {
+        for (Product product:products) {
             if(title.equalsIgnoreCase(product.getTitle())){
                 System.out.println(product.toString());
             }
@@ -17,7 +28,7 @@ public class Shop {
         System.out.println("");
     }
 
-    public static void printByTitleAndPrice(Product[] productMas){
+    public void printByTitleAndPrice(){
         String title;
         int maxPrice;
         System.out.println("Enter product title to find under settled price: ");
@@ -38,7 +49,7 @@ public class Shop {
             }
         }
 
-        for (Product product:productMas) {
+        for (Product product:products) {
             if(title.equalsIgnoreCase(product.getTitle()) && maxPrice>=product.getPrice()){
                 System.out.println(product.toString());
             }
@@ -46,7 +57,7 @@ public class Shop {
         System.out.println("");
     }
 
-    public static void printByShelfLife(Product[] productMas){
+    public void printByShelfLife(){
         int minShelfLife;
         System.out.println("Set minimum product shelf-life to search: ");
         while (true){
@@ -64,7 +75,7 @@ public class Shop {
             }
         }
 
-        for (Product product:productMas) {
+        for (Product product:products) {
             if(minShelfLife<=product.getShelfLifeMonth()){
                 System.out.println(product.toString());
             }
