@@ -1,5 +1,7 @@
 package duke.choice;
 
+import java.util.Arrays;
+
 public class ShopApp {
 
     public static void main(String[] args) {
@@ -23,9 +25,13 @@ public class ShopApp {
 
         int measurement = 3;
 
+        items = items[0].sortByDescription(items);
+
         for (Clothing item : items) {
             System.out.println(item.toString());
         }
         System.out.println("Total: " + c1.getTotalClothingCost());
+        System.out.println("Average: " + c1.getAverageClothingCost());
+
     }
 }

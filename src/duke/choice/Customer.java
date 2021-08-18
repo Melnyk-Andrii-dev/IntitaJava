@@ -11,14 +11,6 @@ public class Customer {
         setSize(measurement);
     }
 
-    public double getTotalClothingCost() {
-        double total = 0.0;
-        for (Clothing item : items) {
-            total = total + item.getPrice();
-        }
-        return total;
-    }
-
     public void addItems(Clothing[] aItems) {
         items = aItems;
     }
@@ -65,4 +57,31 @@ public class Customer {
                 this.size = "XL";
         }
     }
+
+    public double getTotalClothingCost() {
+        double total = 0.0;
+        for (Clothing item : items) {
+            total = total + item.getPrice();
+        }
+        return total;
+    }
+
+    public double getAverageClothingCost() {
+        int itemsAmount = 0;
+        int total = 0;
+        for (Clothing item : items) {
+            if(item.getSize().equalsIgnoreCase("L")) {
+                itemsAmount++;
+                total = total + (int)item.getPrice();
+            }
+        }
+        try {
+            return total / itemsAmount;
+        } catch (ArithmeticException e){
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
+            return 0;
+        }
+    }
+
 }

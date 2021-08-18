@@ -1,6 +1,6 @@
 package duke.choice;
 
-public class Clothing {
+public class Clothing implements Comparable {
 
     public static final double MINIMUM_PRICE = 10;
     public static final double TAX_RATE = 0.2;
@@ -50,4 +50,34 @@ public class Clothing {
                 ", size='" + size + '\'' +
                 '}';
     }
+
+    @Override
+    public int compareTo(Clothing other) {
+        try {
+            return this.getDescription().compareTo(other.getDescription());
+        } catch (NullPointerException e){
+            System.out.println(e.getMessage());
+            return -999;
+        } catch (ClassCastException e){
+            System.out.println(e.getMessage());
+            return -999;
+        }
+    }
+
+    public Clothing[] sortByDescription(Clothing[] mas) {
+
+        Clothing temp;
+
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = i+1; j < mas.length; j++) {
+                if(mas[i].compareTo(mas[j]) > 0){
+                    temp = mas[i];
+                    mas[i] = mas[j];
+                    mas[j] = temp;
+                }
+            }
+        }
+        return mas;
+    }
+    
 }
