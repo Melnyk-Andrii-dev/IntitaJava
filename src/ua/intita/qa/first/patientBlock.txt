@@ -1,0 +1,5 @@
+1 Denis Babin Vinnytsia 11111111 10 allergy
+2 Grigorii Gudz Kyiv 2222222 5 cough
+3 Fedir Mur Kyiv 3333555 15 plaskostopie
+4 Anna Maria Odesa 4444444 1 zdorova
+5 Vitalii Tihon Odesa 4445555 25 allergy
